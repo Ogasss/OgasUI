@@ -1,23 +1,31 @@
 <template>
     <div class="topNav">
-        <div class="logo">
-            <router-link to="/">Logo</router-link>
+        <div class="logo" @click="toggleMenu">
+            logo
         </div>
         <ul class="menu">
             <li><router-link to="/doc">文档</router-link></li>
-            <li>菜单2</li>
+            <li><router-link to="/">首页</router-link></li>
         </ul>
     </div>
 </template>
 
-<script lang="ts">
+<script>
+import { inject } from 'vue'
 export default {
-    name: 'TopNav'
+    setup(){
+        const asideVisible =  inject('asideVisible')
+        const toggleMenu = ()=>{
+            asideVisible.value = !asideVisible.value
+        }
+        return {toggleMenu}
+    }
 }
 </script>
 
 <style lang="scss" scoped>
         .topNav{
+            padding: 0 8px;
             border: 1px solid red;
             height: 5vh;
             width: 100vw;

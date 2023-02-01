@@ -2,35 +2,9 @@
     <div class="theWrapper">
         <TopNav/>
         <div class="content">
-            <aside class="aside">
-                <div class="wrapper">
-                    <h2>组件列表</h2>
-                    <ol>
-                        <li>
-                            <router-link to="/doc">
-                                Button
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/doc">
-                                Button
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/doc">
-                                Button
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/doc">
-                                Button
-                            </router-link>
-                        </li>
-                    </ol>
-                </div>
-                
-                
-            </aside>
+            <transition name="aside">
+                <Aside v-show="asideVisible" class="aside"/>
+            </transition>
             <main>主体内容</main>
         </div>
     </div>
@@ -38,9 +12,18 @@
 
 <script>
 import TopNav from '../TopNav.vue'
+import Aside from '../Aside.vue'
+
+import { inject } from 'vue'
+
 export default {
+    setup(){
+        const asideVisible =  inject('asideVisible')
+        return {asideVisible}
+    },
     components:{
         TopNav,
+        Aside,
     }
 }
 </script>
@@ -53,18 +36,25 @@ export default {
     }
     .content{
         display: flex;
-        .aside{
-            border: 1px solid red;
-            width: 128px;
-            height: 100vh;
-            .wrapper{
-                margin-left: 8px;
-            }
-        }
         main{
-            
         }
-    }   
+    }
     
-
+    .aside-leave-from{
+        transform: translateX(0px);
+    }
+    .aside-leave-to{
+        transform: translateX(-128px);
+    }
+    
+    .aside-enter-from{
+        transform: translateX(-128px);
+    }
+    .aside-enter-to{
+        transform: translateX(0px);
+    }
+    .aside-enter-active,.aside-leave-active{
+        transition: all 0.3s ease;
+    }
+    
 </style>
