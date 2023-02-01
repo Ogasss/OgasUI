@@ -1,7 +1,6 @@
-import Ogas1 from '../components/Ogas1.vue'
-import Ogas2 from '../components/Ogas2.vue'
 import {createWebHashHistory, createRouter} from 'vue-router'
-
+import Home from '../components/views/Home.vue'
+import Doc from '../components/views/Doc.vue'
 
 const history = createWebHashHistory()
 export const router = createRouter({
@@ -9,15 +8,15 @@ export const router = createRouter({
     routes: [
         {
             path: "/",
-            redirect: '/Ogas1'
+            redirect: '/home'
         },
         {
-            path: '/Ogas1', 
-            component: Ogas1
+            path: '/home',
+            component: Home
         },
         {
-            path: '/Ogas2',
-            component: Ogas2
+            path: '/doc',
+            component: Doc
         }
     ]
 })
