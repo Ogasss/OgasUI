@@ -1,3 +1,3 @@
 <template>
-    <div>Ogas</div>
+    <div>Ogas1</div>
 </template>
