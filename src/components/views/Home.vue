@@ -7,8 +7,8 @@
             <h1>OgasUI</h1>
             <h2>一个不起眼的UI框架</h2>
             <p class="actions">
-                <a>GitHub</a>
-                <a>开始</a>
+                <a href="https://github.com/Unclotho/OgasUI">GitHub</a>
+                <router-link to="/doc">开始</router-link>
             </p>
         </div>
     </div>
