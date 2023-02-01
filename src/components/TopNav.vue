@@ -1,13 +1,16 @@
 <template>
-    <div class="topNav">
-        <div class="logo" @click="toggleMenu">
-            logo
+    <div class="theWrapper">
+        <div class="topNav">
+            <div class="logo" @click="toggleMenu">
+                logo
+            </div>
+            <ul class="menu">
+                <li><router-link to="/doc">文档</router-link></li>
+                <li><router-link to="/">首页</router-link></li>
+            </ul>
         </div>
-        <ul class="menu">
-            <li><router-link to="/doc">文档</router-link></li>
-            <li><router-link to="/">首页</router-link></li>
-        </ul>
     </div>
+    
 </template>
 
 <script>
@@ -24,6 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .theWrapper{
         .topNav{
             padding: 0 8px;
             border: 1px solid red;
@@ -42,5 +46,12 @@ export default {
                     margin-right: 10px;
                 }
             }
+           @media (max-width:500px){
+            > .menu{display: none;}
+           }
         }
+        @media (max-width:500px) {
+            > .topNav{justify-content: center;}
+        }
+    }
 </style>

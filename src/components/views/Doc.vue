@@ -36,7 +36,13 @@ export default {
     }
     .content{
         display: flex;
+        .aside{
+            position: absolute;
+            z-index: 2;
+        }
         main{
+            position: absolute;
+            z-index: 1;
         }
     }
     
