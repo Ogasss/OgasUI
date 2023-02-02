@@ -1,66 +1,39 @@
 <template>
-    <div class="theWrapper">
-        <TopNav/>
-        <div class="content">
-            <transition name="aside">
-                <Aside v-show="asideVisible" class="aside"/>
-            </transition>
-            <main>主体内容</main>
-        </div>
-    </div>
+    <Layout>
+        <template v-slot:aside>
+            <DocAside v-show="asideVisible" class="aside"/>
+        </template>
+        <template v-slot:main>
+            <div class="main">
+                <div class="main">
+                    <router-view></router-view>
+                </div>
+            </div>
+        </template>
+    </Layout>
 </template>
 
 <script>
-import TopNav from '../TopNav.vue'
-import Aside from '../Aside.vue'
+import DocAside from '../DocAside.vue'
+import Layout from '../Layout.vue'
 
 import { inject } from 'vue'
 
 export default {
+    components:{
+        DocAside,
+        Layout
+    },
     setup(){
-        const asideVisible =  inject('asideVisible')
+        const asideVisible =  inject('DocAsideVisible')
         return {asideVisible}
     },
-    components:{
-        TopNav,
-        Aside,
-    }
 }
 </script>
 
 <style lang="scss" scoped>
-    .theWrapper{
-        display: flex;
-        flex-direction: column;
-        
+    .main{
+        position: absolute;
+        z-index: 1;
     }
-    .content{
-        display: flex;
-        .aside{
-            position: absolute;
-            z-index: 2;
-        }
-        main{
-            position: absolute;
-            z-index: 1;
-        }
-    }
-    
-    .aside-leave-from{
-        transform: translateX(0px);
-    }
-    .aside-leave-to{
-        transform: translateX(-128px);
-    }
-    
-    .aside-enter-from{
-        transform: translateX(-128px);
-    }
-    .aside-enter-to{
-        transform: translateX(0px);
-    }
-    .aside-enter-active,.aside-leave-active{
-        transition: all 0.3s ease;
-    }
-    
 </style>

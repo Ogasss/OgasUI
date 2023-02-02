@@ -1,33 +1,45 @@
 <template>
-    <div class="theWrapper">
-
-        <TopNav/>
-
-        <div class="banner">
-            <h1>OgasUI</h1>
-            <h2>一个不起眼的UI框架</h2>
-            <p class="actions">
-                <a href="https://github.com/Unclotho/OgasUI">GitHub</a>
-                <router-link to="/doc">开始</router-link>
-            </p>
-        </div>
-    </div>
+    <Layout>
+        <template v-slot:aside>
+            <HomeAside v-show="asideVisible" class="aside"/>
+        </template>
+        <template v-slot:main>
+            <div class="main">
+                <h1>OgasUI</h1>
+                <h2>一个不起眼的UI框架</h2>
+                <p class="actions">
+                    <a href="https://github.com/Unclotho/OgasUI">GitHub</a>
+                    <router-link to="/doc">开始</router-link>
+                </p>
+            </div>
+        </template>
+    </Layout>
 </template>
 <script lang="ts">
-import TopNav from '../TopNav.vue'
+import HomeAside from '../HomeAside.vue'
+import Layout from '../Layout.vue'
+
+import { inject } from 'vue'
+
 export default {
-    name:'Home',
     components:{
-        TopNav
-    }
+        HomeAside,
+        Layout
+    },
+    setup(){
+        const asideVisible =  inject('HomeAsideVisible')
+        return {asideVisible}
+    },
 }
 </script>
 
 <style lang="scss" scoped>
-    .banner{
-        border: 1px solid red;
+    .main{
+        height: 40vh;
         width: 100vw;
-        height: auto;
+        border: 1px solid red;
+        position: absolute;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
