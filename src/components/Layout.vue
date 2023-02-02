@@ -1,10 +1,11 @@
 <template>
     <div class="theWrapper">
         <TopNav class="topNav"/>
+        <transition name="aside">
+            <slot name="aside"></slot>
+        </transition>
         <div class="content">
-            <transition name="aside">
-                <slot name="aside" class="aside"></slot>
-            </transition>
+            
             <main>
                 <slot name="main"></slot>
             </main>
@@ -63,21 +64,16 @@ export default {
             justify-content: center;
             align-items: center;
         }
-    }
-    .content{
-        margin-top: 5vh;
-        display: flex;
-        .aside{
-            position: fixed;
-            left: 0px;
-            z-index: 2;
-        }
-        main{
-            position: absolute;
-            z-index: 1;
-            padding: 8px;
+        .content{
+            display: flex;
+            main{
+                padding-top: 8vh;
+                position: relative;
+                z-index: 1;
+            }
         }
     }
+    
     
     .aside-leave-from{
         transform: translateX(0px);

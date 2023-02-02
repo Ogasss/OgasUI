@@ -39,7 +39,6 @@ export default {
         width: 100vw;
         border: 1px solid red;
         position: absolute;
-        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
