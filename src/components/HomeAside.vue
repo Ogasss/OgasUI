@@ -2,7 +2,7 @@
     <Aside>
         <h2>导航</h2>
         <ol>
-            <li><router-link to="/doc">文档</router-link></li>
+            <li><router-link to="/doc/instructions">文档</router-link></li>
         </ol>
     </Aside>
 </template>

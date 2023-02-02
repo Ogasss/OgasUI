@@ -24,7 +24,7 @@ export const router = createRouter({
                 {
                     path:'instructions',
                     component:Instructions,
-                }
+                },
                 {
                     path: 'switch',
                     component: SwitchDemo,

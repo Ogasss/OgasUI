@@ -75,6 +75,7 @@ export default {
         main{
             position: absolute;
             z-index: 1;
+            padding: 8px;
         }
     }
     
