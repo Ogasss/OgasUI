@@ -1,12 +1,21 @@
 <template>
-    <button class="wrapper">
+    <div class="value">{{value}}</div>
+    <button @click="touchSwitch" :class="value ? 'wrapper active' : 'wrapper'">
         <div class="ball"></div>
     </button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-    
+    props:{
+        value: Boolean,
+    },
+    setup(props, context){
+        const touchSwitch = () => {
+            context.emit('input', !props.value)
+        }
+        return {touchSwitch}
+    }
 }
 </script>
 
@@ -27,18 +36,19 @@ export default {
         border-radius: $radius;
         background: rgb(190, 190, 190);
         transition: all 0.3s ease;
+        .ball{
+            margin-left: 0%;
+            border: 1px solid rgb(190, 190, 190);
+            border-radius: 50%;
+            width: 44%;
+            height: 88%;
+            background: white;
+            transition: all 0.3s ease;
+        }
     }
 
-    .ball{
-        margin-left: 0%;
-        border: 1px solid rgb(190, 190, 190);
-        border-radius: 50%;
-        width: 44%;
-        height: 88%;
-        background: white;
-        transition: all 0.3s ease;
-    }
-    .wrapper:hover{
+    
+    .active{
         background: $bgColor;
         > .ball{
             margin-left: calc(100% - 44% + 2%);
