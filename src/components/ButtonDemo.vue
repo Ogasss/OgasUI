@@ -1,20 +1,29 @@
 <template>
     <div class="main">
-        <Button>
-            默认按钮
-        </Button>
 
-        <Button theme="white">
-            白色主题
-        </Button>
-        
-        <Button theme="black">
-            黑色主题
-        </Button>
-        
-        <Button theme="blue">
-            蓝色主题
-        </Button>
+        <div class="theButton">
+            <Button >
+                默认按钮
+            </Button>
+        </div>
+
+        <div class="theButton">
+            <Button theme="black">
+                黑色主题
+            </Button>
+        </div>
+
+        <div class="theButton">
+            <Button theme="white">
+                白色主题
+            </Button>
+        </div>
+
+        <div class="theButton">
+            <Button theme="blue">
+                蓝色主题
+            </Button>
+        </div>
     </div>
 </template>
 
@@ -31,6 +40,8 @@ export default {
 
 <style lang="scss" scoped>
     .main{
-        
+        .theButton{
+            margin: 8px;
+        }
     }
 </style>

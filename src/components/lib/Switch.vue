@@ -1,10 +1,8 @@
 <template>
-    <div class="value">{{value}}</div>
-    <button @click="touchSwitch" :class="value ? 'wrapper active' : 'wrapper'">
-        <div class="shadow"></div>
-        <div class="ball"></div>
+    <button @click="touchSwitch" :class="value ? 'theSwitchWrapper theSwitchActive' : 'theSwitchWrapper'">
+        <div class="theSwitchShadow"></div>
+        <div class="theSwitchBall"></div>
     </button>
-    
 </template>
 
 <script lang="ts">
@@ -22,44 +20,43 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-    $width: 128px;
-    $height: $width/3;
-    $radius: 0px;
-    $onBgColor: rgb(0,115,165);
-    $offBgColor: rgb(95, 95, 95);
-    $shadowValue1: $width*0.04;
-    $shadowValue2: $width*0.08;
-    $ballShadowValue1: $width*0.01;
-    $ballShadowValue2: $width*0.04;
+    $theSwitchWidth: 128px;
+    $theSwitchHeight: $theSwitchWidth/3;
+    $theSwitchOnBgColor: rgb(0,115,165);
+    $theSwitchOffBgColor: rgb(95, 95, 95);
+    $theSwitchShadowValue1: $theSwitchWidth*0.04;
+    $theSwitchShadowValue2: $theSwitchWidth*0.08;
+    $theSwitchBallShadowValue1: $theSwitchWidth*0.01;
+    $theSwitchBallShadowValue2: $theSwitchWidth*0.04;
 
-    .wrapper{
+    .theSwitchWrapper{
         padding: 2px;
         display: flex;
         align-items: center;
         border: 1px solid rgb(99, 99, 99);
         box-shadow: 0px 0px 0px  rgb(45, 45, 45);
-        width: $width;
-        height: $height;
-        background: $offBgColor;
-        box-shadow: inset $shadowValue1 $shadowValue1 $shadowValue2 #1a1a1a,inset $shadowValue1 $shadowValue1 $shadowValue2 #404040;
+        width: $theSwitchWidth;
+        height: $theSwitchHeight;
+        background: $theSwitchOffBgColor;
+        box-shadow: inset $theSwitchShadowValue1 $theSwitchShadowValue1 $theSwitchShadowValue2 #1a1a1a,inset $theSwitchShadowValue1 $theSwitchShadowValue1 $theSwitchShadowValue2 #404040;
         transition: all 0.3s ease;
-        .ball{
+        .theSwitchBall{
             margin-left: 0%;
             width: 50%;
             height: 100%;
             background: white;
-            box-shadow: inset $ballShadowValue1 $ballShadowValue1 $ballShadowValue2 #c9c9c9,inset $ballShadowValue1 $ballShadowValue1 $ballShadowValue2 #c7c7c7;
+            box-shadow: inset $theSwitchBallShadowValue1 $theSwitchBallShadowValue1 $theSwitchBallShadowValue2 #c9c9c9,inset $theSwitchBallShadowValue1 $theSwitchBallShadowValue1 $theSwitchBallShadowValue2 #c7c7c7;
             transition: all 0.3s ease;
         }
     }
 
     
-    .active{
-        background: $onBgColor;
-        box-shadow: inset $shadowValue1 $shadowValue1 $shadowValue2;
-        > .ball{
+    .theSwitchActive{
+        background: $theSwitchOnBgColor;
+        box-shadow: inset $theSwitchShadowValue1 $theSwitchShadowValue1 $theSwitchShadowValue2;
+        > .theSwitchBall{
             margin-left: 50%;
         }
     } 

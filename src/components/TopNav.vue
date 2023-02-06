@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
     .theWrapper{
         .topNav{
-            background: rgb(124, 124, 124);
+            background: rgb(78, 78, 78);
             color: rgba($color: white, $alpha: 0.8);
             box-shadow: inset 0px -5px 20px rgba($color: black, $alpha: 0.3),inset 0px 5px 20px rgba($color: white, $alpha: 0.1);
             height: 8vh;
