@@ -1,6 +1,20 @@
 <template>
     <div class="main">
-        <Button @click="onClick">开始<Button/>
+        <Button>
+            默认按钮
+        </Button>
+
+        <Button theme="white">
+            白色主题
+        </Button>
+        
+        <Button theme="black">
+            黑色主题
+        </Button>
+        
+        <Button theme="blue">
+            蓝色主题
+        </Button>
     </div>
 </template>
 
@@ -11,10 +25,6 @@ export default {
         Button
     },
     setup(){
-        const onClick = ()=>{
-            alert('触发')
-        }
-        return {onClick}
     }
 }
 </script>

@@ -5,10 +5,9 @@
             <slot name="aside"></slot>
         </transition>
         <div class="content">
-            
-            <main>
+            <div class="mainWrapper">
                 <slot name="main"></slot>
-            </main>
+            </div>
         </div>
         <div class="up" @click="up">
             ↑
@@ -51,13 +50,14 @@ export default {
         .topNav{
             position: fixed;
             top: 0px;
+            z-index: 2;
         }
         .up{
             position: fixed;
             width: 48px;
             height: 48px;
             right: 16px;
-            bottom: 16px;
+            bottom: 32px;
             border: 1px solid red;
             border-radius: 8px;
             display: flex;
@@ -66,10 +66,8 @@ export default {
         }
         .content{
             display: flex;
-            main{
-                padding-top: 8vh;
-                position: relative;
-                z-index: 1;
+            .mainWrapper{
+                margin-top: 8vh;
             }
         }
     }

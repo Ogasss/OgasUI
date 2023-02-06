@@ -35,7 +35,7 @@ export default {
     $ballShadowValue2: $width*0.04;
 
     .wrapper{
-        padding: 2%;
+        padding: 2px;
         display: flex;
         align-items: center;
         border: 1px solid rgb(99, 99, 99);

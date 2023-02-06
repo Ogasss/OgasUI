@@ -37,7 +37,7 @@ export default {
     .main{
         height: 40vh;
         width: 100vw;
-        border: 1px solid red;
+        // border: 1px solid red;
         position: absolute;
         display: flex;
         flex-direction: column;
