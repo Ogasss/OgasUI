@@ -123,7 +123,8 @@ export default {
         background: none;
         transition: all 0.3s ease;
         font-size: 16px;
-        &:hover{
+        &:active{
+            animation: click 0.3s;
         }
     }
     .theButtonBlackBorder{
@@ -153,22 +154,15 @@ export default {
     .theButtonTheme-black{
         background: rgb(85, 85, 85);
         color: rgb(220, 220, 220);
-        box-shadow: inset 0px -5px 20px rgba($color: black, $alpha: 0.3),inset 0px 5px 20px rgba($color: white, $alpha: 0.1);
         &:hover{
-            background: rgba(80, 190, 240, 0.6);
-            border: 1px solid rgb(80, 190, 240);
-            color: white;
+            box-shadow: inset 0px -5px 20px rgba($color: black, $alpha: 0.3),inset 0px 5px 20px rgba($color: white, $alpha: 0.1);
         }
     }
     .theButtonTheme-white{
         color: rgb(65, 65, 65);
         background: rgb(220, 220, 220);
-        box-shadow: inset 0px -5px 20px rgba($color: black, $alpha: 0.3),inset 0px 5px 20px rgba($color: white, $alpha: 0.1);
         &:hover{
-            background: rgba(80, 190, 240, 0.6);
-            border: 1px solid rgb(80, 190, 240);
-             box-shadow: inset 0px -5px 20px rgba($color: rgb(0, 0, 0), $alpha: 0.3),inset 0px 5px 20px rgba($color: white, $alpha: 0.1);
-            color: white;
+            box-shadow: inset 0px -5px 20px rgba($color: black, $alpha: 0.3),inset 0px 5px 20px rgba($color: white, $alpha: 0.1);
         }
     }
     .theButtonBan{
@@ -178,8 +172,22 @@ export default {
     }
     .theButtonLoading{
         border: 1px solid rgb(80, 80, 80);
-        animation: loading 0.8s infinite;
+        animation: loading 0.6s infinite;
         pointer-events: none;
+    }
+
+    @keyframes click {
+        0%{
+            opacity: 1;
+        }
+        50%{
+            background: rgba(80, 190, 240, 0.6);
+            border: 1px solid rgb(80, 190, 240);
+            color: white;
+        }
+        100%{
+            opacity: 1;
+        }
     }
 
     @keyframes loading {

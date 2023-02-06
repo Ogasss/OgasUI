@@ -71,7 +71,6 @@
                 </Button>
             </div>
         </div>
-        
     </div>
 </template>
 
@@ -79,7 +78,7 @@
 import Button from '../components/lib/Button.vue'
 export default {
     components:{
-        Button
+        Button,
     },
     setup(){
         const onClick = ()=>{
