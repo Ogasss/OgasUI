@@ -20,6 +20,8 @@ export default {
     }
 }
 </script>
-<style lang="scss">
-
+<style lang="scss" scoped>
+    .main{
+        padding: 8px;
+    }
 </style>
