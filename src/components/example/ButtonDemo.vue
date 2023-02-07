@@ -1,8 +1,6 @@
 <template>
     <div class="main">
-
         <div>
-
             <div class="theButton">
                 <Button theme="black" @click="onClick">
                     黑色
@@ -75,7 +73,7 @@
 </template>
 
 <script>
-import Button from '../components/lib/Button.vue'
+import Button from '../lib/Button.vue'
 export default {
     components:{
         Button,
